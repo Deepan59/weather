@@ -43,7 +43,7 @@
             background-color: rgba(128, 128, 128, 0.8);
             
         }
-        .container input:active{
+        .container input:focus{
             box-shadow: 0 0 7px rgb(61, 230, 61);
         }
         .container button {
