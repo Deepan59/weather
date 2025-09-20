@@ -5,82 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            font-family: cursive;
-        }
-
-        body {
-            background-image: url('./bg\ img.jpeg');
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .container {
-            background-color: rgba(128, 128, 128, 0.4);
-            padding: 30px;
-            border-radius: 25px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            row-gap: 20px;
-           
-
-        }
-
-        .container h1 {
-            text-shadow: 2px 2px 1px rgb(61, 230, 61);
-            color: white;
-        }
-
-        .container input {
-            padding: 10px;
-            border: none;
-
-            outline: none;
-            width: 70%;
-            padding-top: 14px;
-            border-radius: 10px;
-            background-color: rgba(128, 128, 128, 0.8);
-            box-shadow: 0 0 7px rgb(61, 230, 61);
-        }
-
-        .container button {
-            background-color: rgb(61, 230, 61);
-            border-radius: 15px;
-            padding: 10px;
-            color: white;
-            border: none;
-            box-shadow: 0 0 7px rgb(61, 230, 61);
-
-        }
-
-        .container button:active {
-            background-color: white;
-            border-radius: 15px;
-            padding: 10px;
-            color: rgb(61, 230, 61);
-            border: none;
-
-            box-shadow: 0 0 7px white;
-        }
-        #div p{
-            color: white;
-            font-size: 20px;
-        }
-        @media screen and (max-width:400px) {
-            .container {
-                width: 300px;
-            }
-        }
-    </style>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 
@@ -94,33 +20,7 @@
         <div id="div"></div>
     </div>
 
-    <script>
-        async function abc(){
-            var city = document.getElementById("inp").value
-            var div = document.getElementById("div")
-
-            var api = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=25635cc378ddec6539376173e35f0e5d&units=metric`)
-            try {
-                if (!api.ok) {
-                    throw new Error("Invalid City")
-                } else {
-                    var data = await api.json()
-                    console.log(data)
-                    div.innerHTML=`
-                    <p>Name : ${data.name}</p>
-                    <p>Temperature : ${data.main.temp}</p>
-                    <p>Humidity : ${data.main.humidity}</p>
-                     <p>Pressure : ${data.main.pressure}</p>
-                      <p>Wind Speed : ${data.wind.speed}</p>`
-                }
-            }
-            catch(err){
-                 div.innerHTML=`
-                    <p>Error : ${err.message}</p>`
-            }
-        }
-
-    </script>
+    
  
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
