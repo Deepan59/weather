@@ -1,7 +1,7 @@
 * {
             margin: 0;
             padding: 0;
-            font-family: cursive;
+            font-family: "Poppins" , sans-serif;
         }
 
         body {
@@ -41,9 +41,11 @@
             padding-top: 14px;
             border-radius: 10px;
             background-color: rgba(128, 128, 128, 0.8);
+            
+        }
+        .container input:active{
             box-shadow: 0 0 7px rgb(61, 230, 61);
         }
-
         .container button {
             background-color: rgb(61, 230, 61);
             border-radius: 15px;
